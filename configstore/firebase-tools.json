@@ -1,0 +1,52 @@
+{
+	"analytics-uuid": "240d8aa0-8dbd-4b53-b4cf-a4e87df35982",
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1650189781536
+	},
+	"usage": true,
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "113412518132403882434",
+		"email": "891118heaven@gmail.com",
+		"email_verified": true,
+		"at_hash": "zFJf5AjeLxhYDjRLkCQqVA",
+		"iat": 1650189800,
+		"exp": 1650193400
+	},
+	"tokens": {
+		"expires_at": 1650200230954,
+		"refresh_token": "1//0eM3Mw9kKiRCHCgYIARAAGA4SNwF-L9IrDXZeO6ZWaeeliklRkeAYBUumI-AP16sL8d-fZcO0BM4bSMpwSuNRtRWVuddus4-cmoQ",
+		"scopes": [],
+		"access_token": "ya29.A0ARrdaM9aYbb_mCHp_URb0o3tzamx3Z_vxsLmOhpOpi4x6CHNA0OvkJy39R4Hn46cVyJaJFGgxFWx92Yvimnmkh4Ur_HsXbolMp9PJO2iogg-9qcaO9FlReDZLg-tYY6wOeYJ3D8e61IurwentSnvkzZxY6l-S_6gUi5R",
+		"expires_in": 3599,
+		"scope": "openid https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImQzMzJhYjU0NWNjMTg5ZGYxMzNlZmRkYjNhNmM0MDJlYmY0ODlhYzIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEzNDEyNTE4MTMyNDAzODgyNDM0IiwiZW1haWwiOiI4OTExMThoZWF2ZW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJsMUZUSFJFa0pxaERhNGVBUE84c1BnIiwiaWF0IjoxNjUwMTk2NjMyLCJleHAiOjE2NTAyMDAyMzJ9.dpeolVTK5tqMjwrcg-o2dNs9wbFA1bb5sPNQUXrdlibDHIjFtsW6jmI-tMBpKLkrUG_9irncfw5zH6DJQ_NUaJq2iwZloTSerPRuUZhivhergQimk_GB70fS9mLOYyvNHPk04vCJiMY_JJL-OaeJqvJWTuh1lTf8koS4nmfNs-391rwHQb21PaJm4an98MnZ_xVhHF_89O92VyAY5FrT-it_Irk0X4EFfd3jZPvuzMcQN0_RbJ_XPCM0cD0KpZNOvebHv2Lc-qgLryOarijVzUijyzho_NegGLVm38HQaGcH8e4Bc1bS1Yub2JIO5VKebSqoaXm2pAnnrqOonM_s4w"
+	},
+	"activeProjects": {
+		"/Users/heavenchen/Desktop/login-auth": "login-page-auth-32f79",
+		"/Users/heavenchen/Downloads/Login-Auth-master": "login-page-auth-32f79"
+	},
+	"webconfig": {
+		"login-page-auth-32f79": {
+			"projectId": "login-page-auth-32f79",
+			"appId": "1:601314770085:web:27112002378bd562a2614c",
+			"databaseURL": "https://login-page-auth-32f79-default-rtdb.asia-southeast1.firebasedatabase.app",
+			"storageBucket": "login-page-auth-32f79.appspot.com",
+			"locationId": "us-central",
+			"apiKey": "AIzaSyD6ZRnj2AljoAc4flntjzZNsErLf50VC_Q",
+			"authDomain": "login-page-auth-32f79.firebaseapp.com",
+			"messagingSenderId": "601314770085",
+			"measurementId": "G-B4F6EB2Q50"
+		}
+	}
+}
