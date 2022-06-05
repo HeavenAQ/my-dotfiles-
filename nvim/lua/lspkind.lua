@@ -1,61 +1,3 @@
-local status, lspkind = pcall(require, "lspkind")
-if (not status) then return end
-
-lspkind.init({
-  -- enables text annotations
-  --
-  -- default: true
-  mode = 'symbol',
-
-  -- default symbol map
-  -- can be either 'default' (requires nerd-fonts font) or
-  -- 'codicons' for codicon preset (requires vscode-codicons font)
-  --
-  -- default: 'default'
-  preset = 'codicons',
-
-  -- override preset symbols
-  --
-  -- default: {}
-  symbol_map = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "ﰠ",
-    Variable = "",
-    Class = "ﴯ",
-    Interface = "",
-    Module = "",
-    Property = "ﰠ",
-    Unit = "塞",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "פּ",
-    Event = "",
-    Operator = "",
-    TypeParameter = ""
-  },
-})
-
--- Diagnostic Sign 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
-
--- wrap open_float to inspect diagnostics and use the severity color for border
--- https://neovim.discourse.group/t/lsp-diagnostics-how-and-where-to-retrieve-severity-level-to-customise-border-color/1679
 vim.diagnostic.open_float = (function(orig)
     return function(bufnr, opts)
         local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
@@ -80,11 +22,11 @@ vim.diagnostic.open_float = (function(orig)
         
         opts.border = {
             {"╭", border_color},
-            {"━", border_color},
+            {"─", border_color},
             {"╮", border_color},
             {"│", border_color},
             {"╯", border_color},
-            {"━", border_color},
+            {"─", border_color},
             {"╰", border_color},
             {"│", border_color},
           }
@@ -106,14 +48,4 @@ vim.diagnostic.config({
     source = "always",  -- Or "if_many"
   },
 })
-
-
--- Lsp Prefix 
-vim.diagnostic.config({
-  virtual_text = {
-    prefix = '', -- Could be '●', '▎', 'x'
-  }
-})
-
-
 
