@@ -61,11 +61,15 @@ Plug 'windwp/nvim-ts-autotag'
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'heavenshell/vim-pydocstring'
+Plug 'lithammer/nvim-pylance'
 
 " Aesthetics - Colorschemes
-Plug 'nightfly/vim', { 'as': 'nightfly' }
 Plug 'zaki/zazen'
 Plug 'yuttie/hydrangea-vim'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'bluz71/vim-moonfly-colors'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Aesthetics - Others
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -85,6 +89,7 @@ set fillchars+=vert:\
 set wrap breakindent
 set encoding=utf-8
 set textwidth=0
+set cursorline
 set hidden
 set number
 set title
@@ -179,12 +184,16 @@ autocmd BufLeave term://* stopinsert
 let g:python3_host_prog = '~/.config/nvim/env/bin/python3'
 let g:pydocstring_doq_path = '~/.config/nvim/env/bin/doq'
 
+"LSP color modification (overwrite nightly settings)
+highlight NormalFloat guibg=NONE
+exec 'highlight DiagnosticUnderlineError guisp=#db4b4b guifg=#db4b4b'
+exec 'highlight DiagnosticUnderlineWarning guisp=#e0af68 guifg=#e0af68'
+exec 'highlight DiagnosticUnderlineHint guisp=#0db9d7 guifg=#0db9d7'
+exec 'highlight DiagnosticUnderlineInformation guisp=#10B981 guifg=#10B981'
+
+
 """ Core plugin configuration (lua)
 lua << EOF
-servers = {
-    'pyright',
-    --'tsserver', -- uncomment for typescript. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md for other language servers
-}
 require('treesitter-config')
 require('nvim-cmp-config')
 require('lspconfig-config')
@@ -220,8 +229,8 @@ nmap <leader>k :ColorToggle<CR>
 nmap <leader>l :Limelight!!<CR>
 xmap <leader>l :Limelight!!<CR>
 nmap <silent> <leader><leader> :noh<CR>
-nmap <Tab> :bnext<CR>
-nmap <S-Tab> :bprevious<CR>
+nmap <S-e> :bnext<CR>
+nmap <S-w> :bprevious<CR>
 nmap <leader>$s <C-w>s<C-w>j:terminal<CR>:set nonumber<CR><S-a>
 nmap <leader>$v <C-w>v<C-w>l:terminal<CR>:set nonumber<CR><S-a>
 
@@ -239,4 +248,19 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fc <cmd>Telescope colorscheme<cr>
 nnoremap <leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
+
+"setting clipboard copy and paste
+runtime ./plug.vim
+if has("unix")
+  let s:uname = system("uname -s")
+  " Do Mac stuff
+  if s:uname == "Darwin\n"
+    runtime ./macos.vim
+  endif
+endif
+if has('win32')
+  runtime ./windows.vim
+endif
+
+runtime ./maps.vim
 

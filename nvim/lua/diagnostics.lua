@@ -1,12 +1,13 @@
-local signs = { Error = "✘", Warn = "", Hint = "•", Info = "" }
-
+-- Diagnostic Sign 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- Lsp Prefix 
 vim.diagnostic.config({
-    virtual_text = {
-        prefix = '●', -- Could be '●', '▎', 'x'
-    }
+  virtual_text = {
+    prefix = '', -- Could be '●', '▎', 'x'
+  }
 })

@@ -1,0 +1,1 @@
+autotag.setup({})
