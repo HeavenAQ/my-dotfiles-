@@ -50,6 +50,20 @@ nvim_lsp.vuels.setup {
     root_dir = function () return vim.loop.cwd() end,
     }
 
+--html
+nvim_lsp.html.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { 'html', 'htmldjango' }
+    }
+
+--css
+nvim_lsp.cssls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    }
+
+--sql 
 nvim_lsp.sqls.setup{
   settings = {
     sqls = {

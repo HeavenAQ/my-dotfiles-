@@ -56,16 +56,20 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
-
+Plug 'pangloss/vim-javascript'
+Plug 'isruslan/vim-es6'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'jsborjesson/vim-uppercase-sql'
+Plug 'mattn/emmet-vim'
+Plug 'shmup/vim-sql-syntax'
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'heavenshell/vim-pydocstring'
-Plug 'lithammer/nvim-pylance'
+Plug 'Vimjas/vim-python-pep8-indent'
 
 " Aesthetics - Colorschemes
-Plug 'zaki/zazen'
-Plug 'yuttie/hydrangea-vim'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'EdenEast/nightfox.nvim'
@@ -87,8 +91,12 @@ set ruler laststatus=2 showcmd showmode
 set list listchars=trail:»,tab:»-
 set fillchars+=vert:\ 
 set wrap breakindent
+set linebreak
 set encoding=utf-8
 set textwidth=0
+set wrapmargin=1
+set formatoptions+=t
+set formatoptions-=l 
 set cursorline
 set hidden
 set number
@@ -104,6 +112,17 @@ autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
 autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
 autocmd FileType htmldjango inoremap {# {#  #}<left><left><left>
+autocmd FileType html inoremap {{ {{  }}<left><left><left>
+autocmd FileType html inoremap {% {%  %}<left><left><left>
+autocmd FileType html inoremap {# {#  #}<left><left><left>
+
+"templates for certain file extention
+"augroup templates
+"  au!
+"  " read in template files
+"  autocmd BufNewFile *.* silent! execute '0r ~/.config/nvim/templates/skeleton.'.expand("<afile>:e")
+"augroup END
+
 
 " Markdown and Journal
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -167,9 +186,6 @@ let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
-" FixCursorHold for better performance
-let g:cursorhold_updatetime = 100
-
 " context.vim
 let g:context_nvim_no_redraw = 1
 
@@ -213,6 +229,10 @@ function! TrimWhitespace()
     call winrestview(l:save)
 endfunction
 
+" limelight color
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_guifg = 'gray'
+
 """ Custom Mappings (vim) (lua custom mappings are within individual lua config files)
 
 " Core
@@ -248,6 +268,25 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fc <cmd>Telescope colorscheme<cr>
 nnoremap <leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
+
+" html file settings
+let g:user_emmet_leader_key='<C-D>'
+let g:user_emmet_mode='a'
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.ts'
+
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.tsx'
+
+let g:closetag_filetypes = 'html,xhtml,phtml,js,ts'
+
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,tsx'
+
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_enable_react_fragment = 1
+
+" FixCursorHold for better performance
+let g:cursorhold_updatetime = 100
+
 
 "setting clipboard copy and paste
 runtime ./plug.vim

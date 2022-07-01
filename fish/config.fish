@@ -14,6 +14,12 @@ alias ls "ls -p -G"
 alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
+alias ide='tmux split-window -v -p 30;tmux split-window -h -p 66;tmux split-window -h -p 50'
+alias term='tmux split-window -v -p 30'
+alias u2d="unix2dos"
+alias mongod='mongod --dbpath=/Users/heavenchen/data/db'
+alias ll='exa -l'
+alias tree='exa --tree --level=2'
 alias g git
 command -qv nvim && alias vim nvim
 
